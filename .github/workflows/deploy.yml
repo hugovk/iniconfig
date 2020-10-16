@@ -41,7 +41,7 @@ jobs:
         run: |
           git tag
           python setup.py --version
-          python setup.py sdist --format=gztar bdist_wheel
+          python setup.py sdist --format=gztar bdist_wheel setuptools_scm
           twine check dist/*
 
       - name: Publish package to PyPI
