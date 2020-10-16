@@ -35,13 +35,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -U pip
-          python -m pip install -U setuptools twine wheel
+          python -m pip install -U setuptools setuptools_scm twine wheel
 
       - name: Build package
         run: |
           git tag
           python setup.py --version
-          python setup.py sdist --format=gztar bdist_wheel setuptools_scm
+          python setup.py sdist --format=gztar bdist_wheel
           twine check dist/*
 
       - name: Publish package to PyPI
