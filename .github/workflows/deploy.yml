@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - autodeploy
   release:
     types:
       - published
